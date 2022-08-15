@@ -1,0 +1,130 @@
+* {
+    font-family: sans-serif;
+}
+
+.loader {
+    border: 16px solid #a8a8a8;
+    border-top: 16px solid rgba(125, 197, 255, 0.952);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 100px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.main_product {
+    padding-top: 100px;
+
+}
+
+.products {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 0px;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.product_item {
+    margin: 10px;
+    /* border: 10px solid rgb(107, 107, 107); */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgb(204, 204, 204);
+    background: url('../../images/container_bg.png');
+    background-size: cover;
+}
+
+.details {
+    padding: 10px 20px;
+}
+
+.title_div {
+    color: rgb(117, 117, 117);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.details p {
+    color: rgb(49, 49, 49) !important;
+}
+
+.img_div {
+    position: relative;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.img_div img {
+    height: 100%;
+}
+
+.hover_div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    transition: .3s all;
+}
+
+.add_to_cart {
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: -50px;
+    transition: .3s all;
+    transition-delay: .3s;
+    cursor: pointer;
+}
+
+.product_item:hover .hover_div {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.164);
+}
+
+.product_item:hover .add_to_cart {
+    margin-bottom: 0px;
+}
+
+@media(max-width:1000px) {
+    .products {
+        grid-template-columns: auto auto;
+        width: 90%;
+    }
+}
+
+@media(max-width:550px) {
+    .products {
+        grid-template-columns: auto;
+        width: 80%;
+    }
+}
+
+@media(max-width:400px) {
+    .products {
+        width: 95%;
+    }
+}
